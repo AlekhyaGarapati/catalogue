@@ -1,11 +1,8 @@
 pipeline{
-    agent {node {label : 'agent1'}}
+    agent {node {label 'agent1'}}
     options{
-        timeout(time: '1', unit:'Hours')
+        timeout(time:1, unit:'Hours')
         ansiColor('xterm')
-    }
-    environment{
-        
     }
     stages{
         stage('install dependencies')
@@ -16,6 +13,10 @@ pipeline{
                 '''
             }
         }
-
+       stage ('unit testing') {
+        steps{
+            echo "unit tetsing"
+        }
+       }
     }
 }
