@@ -1,7 +1,7 @@
 pipeline{
     agent {node {label 'agent1'}}
     options{
-        timeout(time:1, unit:Hours)
+        timeout(time: 1, unit: 'HOURS')
         ansiColor('xterm')
     }
     stages{
